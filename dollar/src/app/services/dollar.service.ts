@@ -25,23 +25,38 @@ export class DollarService {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8'
       }
-    } ).pipe(
+    }).pipe(
       catchError(this.handleError)
     )
   }
 
   saveHistory = async (decimal: string) => {
-    
+
     const { error: errorHistory } = await supabase
-        .from('history')
-        .insert({ value: decimal })
+      .from('history')
+      .insert({ value: decimal })
 
     if (!errorHistory) {
       return decimal
     }
 
     return '0'
-      
+
+  }
+
+  getHistory = async (): Promise<String[] | Number[]> => {
+    const { data: history, error } = await supabase
+      .from('history')
+      .select('*')
+
+    if (error) {
+      return []
+    }
+    
+    const values = history?.map(item => item["value"] )
+
+    return values
+
   }
 
 
