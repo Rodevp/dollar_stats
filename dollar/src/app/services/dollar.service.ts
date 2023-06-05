@@ -1,6 +1,7 @@
-import { HttpClient, HttpErrorResponse, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { supabase } from 'src/libs/supabase';
 
 @Injectable({
@@ -9,8 +10,7 @@ import { supabase } from 'src/libs/supabase';
 export class DollarService {
 
   private http = inject(HttpClient)
-  private url = 'https://www.dolar-colombia.com/'
-
+  private url = environment.urlScrap
 
   private handleError = (error: HttpErrorResponse) => {
     if (error) {
@@ -18,7 +18,6 @@ export class DollarService {
     }
     return throwError(() => new Error('Peticion incorrecta'))
   }
-
 
   getDollarToday = () => {
     return this.http.get(this.url, {
@@ -44,7 +43,6 @@ export class DollarService {
     return '0'
       
   }
-
 
 
 }

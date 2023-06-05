@@ -24,7 +24,6 @@ export class CarddollarComponent implements OnInit{
         this.dollarValue = parseDecimal
         localStorage.setItem('dollar', parseDecimal)
 
-
       })
   }
 
