@@ -8,6 +8,8 @@ import { CarddollarComponent } from './components/carddollar/carddollar.componen
 import { CardchartsComponent } from './components/cardcharts/cardcharts.component';
 import { CardcalculatorComponent } from './components/cardcalculator/cardcalculator.component';
 import { CalculateDollarPipe } from './pipes/calculate-dollar.pipe';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { CalculateDollarPipe } from './pipes/calculate-dollar.pipe';
     CarddollarComponent,
     CardchartsComponent,
     CardcalculatorComponent,
-    CalculateDollarPipe
+    CalculateDollarPipe,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
