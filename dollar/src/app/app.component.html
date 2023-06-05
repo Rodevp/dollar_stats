@@ -1,20 +1,23 @@
-<main
-    class="h-screen bg-slate-100 flex justify-center"
->
-    <section
-        class="flex flex-col gap-5 w-11/12 justify-center items-center py-4 h-full"
-    >
+<section class="h-screen bg-slate-100 flex flex-col justify-center items-center py-6">
+    <section class="
+            h-[35%]
+            bg-emerald-300
+            md:w-[80%]
+            lg:w-[75%]
+            px-1
+            pt-5
+    ">
         <app-carddollar></app-carddollar>
-        <section
-            class="
-                h-[55%] w-full
+    </section>
+    <section class="
                 flex flex-col justify-center gap-4
+                h-[40%]
+                px-1
                 md:w-[80%] md:flex-row
                 lg:w-[75%]
-            "
-        >
-            <app-cardcalculator></app-cardcalculator>
-            <app-cardcharts></app-cardcharts>
-        </section>
+                bg-red-500
+            ">
+        <app-cardcalculator></app-cardcalculator>
+        <app-cardcharts></app-cardcharts>
     </section>
-</main>
+</section>
