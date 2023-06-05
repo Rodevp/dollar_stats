@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CarddollarComponent } from './components/carddollar/carddollar.component';
 import { CardchartsComponent } from './components/cardcharts/cardcharts.component';
 import { CardcalculatorComponent } from './components/cardcalculator/cardcalculator.component';
+import { CalculateDollarPipe } from './pipes/calculate-dollar.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarddollarComponent,
     CardchartsComponent,
-    CardcalculatorComponent
+    CardcalculatorComponent,
+    CalculateDollarPipe
   ],
   imports: [
     BrowserModule,
