@@ -10,12 +10,22 @@
     </section>
     <section class="
                 flex flex-col justify-center gap-4
-                h-[40%]
-                px-1
-                md:w-[80%] md:flex-row
+                px-2
+                py-6
+                md:w-[75%] md:flex-row
                 lg:w-[75%]
+                bg-red-900
             ">
-        <app-cardcalculator></app-cardcalculator>
-        <app-cardcharts></app-cardcharts>
+        <div
+            class="w-[100%] md:w-[35%]"
+        >
+            <app-cardcalculator></app-cardcalculator>
+        </div>
+        <div
+            class="w-[100%]
+            md:w-[50%] lg:w-[60%]"
+        >
+            <app-cardcharts></app-cardcharts>
+        </div>
     </section>
 </section>
