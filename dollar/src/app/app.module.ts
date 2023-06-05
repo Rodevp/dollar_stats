@@ -20,7 +20,7 @@ import { CalculateDollarPipe } from './pipes/calculate-dollar.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
