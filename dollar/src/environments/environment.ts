@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  publicKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0cGN2Z3FxcXpscW94a2ZueGtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM2NDY3MjgsImV4cCI6MTk5OTIyMjcyOH0.rjSrvWgvT7gK_k01n_pfSRDN3_k0_Rl-gVGM7tfMiok',
-  urlSupabase: 'https://jtpcvgqqqzlqoxkfnxkh.supabase.co',
-  urlScrap: 'http://localhost:3000/scrap'
+  publicKey: '',
+  urlSupabase: '',
+  urlScrap: ''
 };
 
 /*
