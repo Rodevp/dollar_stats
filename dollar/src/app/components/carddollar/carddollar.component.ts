@@ -14,8 +14,8 @@ export class CarddollarComponent implements OnInit {
     this.service.getDollarToday()
       .subscribe((data) => {
 
+        this.dollarValue = data?.value
         this.service.saveHistory(data?.value)
-
         localStorage.setItem('dollar', data?.value)
 
       })
