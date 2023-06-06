@@ -1,28 +1,22 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DollarService } from 'src/app/services/dollar.service';
-import cheerio from 'cheerio';
 
 @Component({
   selector: 'app-carddollar',
   templateUrl: './carddollar.component.html',
 })
-export class CarddollarComponent implements OnInit{
+export class CarddollarComponent implements OnInit {
 
   private service = inject(DollarService)
-  dollarValue: string = '' 
+  dollarValue: string = ''
 
   dollarToday = () => {
     this.service.getDollarToday()
-      .subscribe( (data) => {
+      .subscribe((data) => {
 
-        const scrap = cheerio.load(data)
-        const valueDollar = scrap('span.exchange-rate')
-        const parseDecimal = valueDollar?.text()?.replace(',', '.')
-      
-        this.service.saveHistory(parseDecimal)
+        this.service.saveHistory(data?.value)
 
-        this.dollarValue = parseDecimal
-        localStorage.setItem('dollar', parseDecimal)
+        localStorage.setItem('dollar', data?.value)
 
       })
   }

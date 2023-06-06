@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { supabase } from 'src/libs/supabase';
+import { ResponseScrap } from './response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +21,10 @@ export class DollarService {
   }
 
   getDollarToday = () => {
-    return this.http.get(this.url, {
-      responseType: 'text',
-      headers: {
-        'Content-Type': 'text/plain; charset=utf-8'
-      }
-    }).pipe(
-      catchError(this.handleError)
-    )
+    return this.http.get<ResponseScrap>(this.url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
   saveHistory = async (decimal: string) => {
