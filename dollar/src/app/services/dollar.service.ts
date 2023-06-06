@@ -21,7 +21,12 @@ export class DollarService {
   }
 
   getDollarToday = () => {
-    return this.http.get<ResponseScrap>(this.url)
+    return this.http.get<ResponseScrap>(this.url, {
+      responseType: 'json',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .pipe(
         catchError(this.handleError)
       )
